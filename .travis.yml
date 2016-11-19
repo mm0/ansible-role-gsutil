@@ -5,9 +5,9 @@ before_install:
  - sudo apt-get update -qq
  - sudo apt-get install -qq python-apt python-pycurl
 install:
-  - pip install ansible
+  - pip install ansible==2.1.0
   - ansible --version
 script:
-  - echo localhost > inventory
-  - ansible-playbook -i inventory --syntax-check --list-tasks test.yml
-  - ansible-playbook -i inventory --connection=local --sudo -vvvv test.yml
+  - printf '[defaults]\nroles_path=../' >ansible.cfg
+  - ansible-playbook -i tests/inventory --syntax-check --list-tasks tests/test.yml
+  - ansible-playbook -i tests/inventory --connection=local --sudo -vvvv tests/test.yml
