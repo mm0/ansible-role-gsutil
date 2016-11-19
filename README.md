@@ -3,6 +3,8 @@ ansible-role-gsutil
 
 Install and setup gsutil with Ansible
 
+![travis-ci](https://travis-ci.org/mm0/ansible-role-gsutil.svg?branch=master)
+
 # Example :
 ```
 ---
