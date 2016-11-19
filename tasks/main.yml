@@ -1,6 +1,6 @@
 ---
 - name: Ensure dependancies gsutil are installed for Debian OS family
-  apt: pkg=gcc,python-dev,python-setuptools,libffi-dev state=present
+  apt: pkg=gcc,libssl-dev,python-dev,python-setuptools,libffi-dev state=present
   when: ansible_os_family == "Debian"
   become: yes
   environment: "{{ gsutil_environment }}"
