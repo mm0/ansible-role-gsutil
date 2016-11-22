@@ -25,6 +25,13 @@
   environment: "{{ gsutil_environment }}"
   tags: ["packages","gsutil"]
 
+- name: Ensure the right version of httplib2 is installed
+  pip: name=httplib2 version=0.9.1
+  become: yes
+  environment: "{{ gsutil_environment }}"
+  tags: ["packages","gsutil"]
+
+- name: Ensure gsutil is installed
 - name: Ensure gsutil is installed
   pip: name=gsutil state=present
   become: yes
