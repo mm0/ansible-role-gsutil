@@ -32,7 +32,6 @@
   tags: ["packages","gsutil"]
 
 - name: Ensure gsutil is installed
-- name: Ensure gsutil is installed
   pip: name=gsutil state=present
   become: yes
   environment: "{{ gsutil_environment }}"
